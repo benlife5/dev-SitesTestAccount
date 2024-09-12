@@ -18,7 +18,7 @@ const navigation: CTA[] = [
   { link: "#", label: "FAQs" },
 ];
 
-const Footer = () => {
+const Footer = ({ isEditing }: { isEditing: boolean }) => {
   return (
     <FooterLayout
       copyrightMessage={"All Rights Reserved."}
@@ -28,6 +28,7 @@ const Footer = () => {
       facebook="#"
       instagram="#"
       footerLinks={navigation}
+      isEditing={isEditing}
     />
   );
 };
@@ -40,6 +41,7 @@ interface FooterLayoutProps {
   facebook?: string;
   instagram?: string;
   footerLinks: CTA[];
+  isEditing: boolean;
 }
 
 const FooterLayout = (props: FooterLayoutProps) => {
@@ -51,6 +53,7 @@ const FooterLayout = (props: FooterLayoutProps) => {
     facebook,
     instagram,
     footerLinks,
+    isEditing,
   } = props;
 
   const socialLinks = [
@@ -87,6 +90,7 @@ const FooterLayout = (props: FooterLayoutProps) => {
         <div className="flex flex-col space-y-4 pt-4 md:grid md:grid-cols-2 md:grid-rows-4 md:gap-y-4 md:space-y-0 md:pt-0">
           {footerLinks.map((link, i) => (
             <Link
+              style={{pointerEvents: isEditing && "none"}}
               key={i}
               cta={link}
               className="font-bold hover:underline md:px-4"
@@ -98,6 +102,7 @@ const FooterLayout = (props: FooterLayoutProps) => {
           {socialLinks.map((socialLink, i) =>
             socialLink.link ? (
               <Link
+                style={{pointerEvents: isEditing && "none"}}
                 key={i}
                 href={socialLink.link}
                 className="hover:text-gray-300"
