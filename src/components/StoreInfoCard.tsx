@@ -17,6 +17,7 @@ export type StoreInfoCardProps = {
   heading: {
     text: string;
     title: EntityFieldType;
+    subtitle: EntityFieldType;
     size: HeadingProps["size"];
     color: HeadingProps["color"];
   };
@@ -35,6 +36,11 @@ const storeInfoCardFields: Fields<StoreInfoCardProps> = {
       //@ts-expect-error ts(2322)
       title: YextEntityFieldSelector<typeof config>({
         label: "Title",
+        filter: { types: ["type.string"] }
+      }),
+      //@ts-expect-error ts(2322)
+      subtitle: YextEntityFieldSelector<typeof config>({
+        label: "Subtitle",
         filter: { types: ["type.string"] }
       }),
       size: {
@@ -85,6 +91,7 @@ const StoreInfoCard = ({ heading, alignment }: StoreInfoCardProps) => {
           color={heading.color}
         >
           {resolveYextEntityField(document, heading.title)}
+          {resolveYextEntityField(document, heading.subtitle)}
         </Heading>
         <EntityField displayName="Address" fieldId="address">
           <Address
@@ -135,6 +142,10 @@ export const StoreInfoCardComponent: ComponentConfig<StoreInfoCardProps> = {
   defaultProps: {
     heading: {
       title: {
+        fieldName: '',
+        staticValue: ''
+      },
+      subtitle: {
         fieldName: '',
         staticValue: ''
       },
