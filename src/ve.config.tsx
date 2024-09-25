@@ -45,9 +45,9 @@ export const locationConfig: Config<LocationProps> = {
     render: ({ children, puck: {isEditing} }) => {
       return (
         <>
-          <Header isEditing={isEditing}/>
+          <Header isEditing={isEditing} />
           {children}
-          <Footer isEditing={isEditing}/>
+          <Footer isEditing={isEditing} />
         </>
       );
     },

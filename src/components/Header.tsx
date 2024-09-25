@@ -3,20 +3,25 @@ import logo from "../assets/logo.png";
 import "./index.css";
 
 const navigation: CTA[] = [
-  { link: "/", label: "Restaurants" },
-  { link: "/", label: "Blog" },
-  { link: "/", label: "Support" },
+  { link: "#", label: "Restaurants" },
+  { link: "#", label: "Blog" },
+  { link: "#", label: "Support" },
 ];
 
-const Header = ({ isEditing }: { isEditing: boolean }) => {
+type HeaderProps = {
+  isEditing: boolean;
+}
+
+const Header = (props: HeaderProps) => {
+  const { isEditing } = props;
   return <HeaderLayout links={navigation} logo={logo} isEditing={isEditing} />;
 };
 
 type HeaderLayoutProps = {
+  isEditing: boolean;
   links: CTA[];
   logo?: string;
   logoLink?: string;
-  isEditing: boolean;
 };
 
 const HeaderLayout = (props: HeaderLayoutProps) => {
