@@ -8,14 +8,13 @@ import { Link } from "@yext/pages-components";
 import { IconContext } from "react-icons";
 import { MdOutlineEmail } from "react-icons/md";
 import { HiOutlinePhone } from "react-icons/hi";
-import { EntityField, EntityFieldType, resolveYextEntityField, YextEntityFieldSelector } from "@yext/visual-editor";
+import { EntityField } from "@yext/visual-editor";
 import "@yext/pages-components/style.css";
 import {CardProps} from "./Card";
-import { config } from "../templates/location";
 
 export type StoreInfoCardProps = {
   heading: {
-    entityField: EntityFieldType;
+    text: string;
     size: HeadingProps["size"];
     color: HeadingProps["color"];
   };
@@ -27,14 +26,10 @@ const storeInfoCardFields: Fields<StoreInfoCardProps> = {
     type: "object",
     label: "Heading",
     objectFields: {
-      //@ts-expect-error ts(2322)
-      entityField: YextEntityFieldSelector<typeof config>({
-        label: "Title",
-        filter: {
-          types: ["type.string"],
-          includeSubfields: true
-        }
-      }),
+      text: {
+        label: "Text",
+        type: "text",
+      },
       size: {
         label: "Size",
         type: "radio",
@@ -65,8 +60,7 @@ const storeInfoCardFields: Fields<StoreInfoCardProps> = {
 };
 
 const StoreInfoCard = ({ heading, alignment }: StoreInfoCardProps) => {
-  const document = useDocument<LocationStream>();
-  const {address, mainPhone, emails} = document;
+  const {address, mainPhone, emails} = useDocument<LocationStream>();
   const phoneNumber = formatPhoneNumber(mainPhone);
   const coordinates = getDirections(address as AddressType);
 
@@ -82,7 +76,7 @@ const StoreInfoCard = ({ heading, alignment }: StoreInfoCardProps) => {
           className={"mb-4"}
           color={heading.color}
         >
-          {resolveYextEntityField(document, heading.entityField)}
+          {heading.text}
         </Heading>
         <EntityField displayName="Address" fieldId="address">
           <Address
@@ -110,7 +104,7 @@ const StoreInfoCard = ({ heading, alignment }: StoreInfoCardProps) => {
                 {emails.map((email: any) => (
                   <div
                     className="pt-2.5 gap-x-1.5 flex flex-row items-center"
-                    key={email}
+                    key="email"
                   >
                     <MdOutlineEmail />
                     <Link
@@ -132,10 +126,7 @@ export const StoreInfoCardComponent: ComponentConfig<StoreInfoCardProps> = {
   fields: storeInfoCardFields,
   defaultProps: {
     heading: {
-      entityField: {
-        fieldName: "",
-        staticValue: ""
-      },
+      text: "Information",
       size: "subheading",
       color: "default",
     },
