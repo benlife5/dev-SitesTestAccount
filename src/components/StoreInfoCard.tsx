@@ -1,23 +1,20 @@
 import { ComponentConfig, Fields } from "@measured/puck";
 import { useDocument } from "@yext/pages/util";
 import { LocationStream } from "../types/autogen";
-import { Address, AddressType, getDirections } from "@yext/pages-components";
+import {Address, AddressType, getDirections} from "@yext/pages-components";
 import { Section } from "./atoms/section";
 import { Heading, HeadingProps } from "./atoms/heading";
 import { Link } from "@yext/pages-components";
 import { IconContext } from "react-icons";
 import { MdOutlineEmail } from "react-icons/md";
 import { HiOutlinePhone } from "react-icons/hi";
-import { EntityField, EntityFieldType, resolveYextEntityField, YextEntityFieldSelector } from "@yext/visual-editor";
+import { EntityField } from "@yext/visual-editor";
 import "@yext/pages-components/style.css";
-import { CardProps } from "./Card";
-import { config } from "../templates/location";
+import {CardProps} from "./Card";
 
 export type StoreInfoCardProps = {
   heading: {
     text: string;
-    title: EntityFieldType;
-    subtitle: EntityFieldType;
     size: HeadingProps["size"];
     color: HeadingProps["color"];
   };
@@ -33,16 +30,6 @@ const storeInfoCardFields: Fields<StoreInfoCardProps> = {
         label: "Text",
         type: "text",
       },
-      //@ts-expect-error ts(2322)
-      title: YextEntityFieldSelector<typeof config>({
-        label: "Title",
-        filter: { types: ["type.string"] }
-      }),
-      //@ts-expect-error ts(2322)
-      subtitle: YextEntityFieldSelector<typeof config>({
-        label: "Subtitle",
-        filter: { types: ["type.string"] }
-      }),
       size: {
         label: "Size",
         type: "radio",
@@ -67,14 +54,13 @@ const storeInfoCardFields: Fields<StoreInfoCardProps> = {
     type: "radio",
     options: [
       { label: "Left", value: "items-start" },
-      { label: "Center", value: "items-center" },
+      { label: "Center", value: "items-center"},
     ]
   }
 };
 
 const StoreInfoCard = ({ heading, alignment }: StoreInfoCardProps) => {
-  const document = useDocument<LocationStream>();
-  const { address, mainPhone, emails } = document;
+  const {address, mainPhone, emails} = useDocument<LocationStream>();
   const phoneNumber = formatPhoneNumber(mainPhone);
   const coordinates = getDirections(address as AddressType);
 
@@ -90,8 +76,7 @@ const StoreInfoCard = ({ heading, alignment }: StoreInfoCardProps) => {
           className={"mb-4"}
           color={heading.color}
         >
-          {resolveYextEntityField(document, heading.title)}
-          {resolveYextEntityField(document, heading.subtitle)}
+          {heading.text}
         </Heading>
         <EntityField displayName="Address" fieldId="address">
           <Address
@@ -119,7 +104,7 @@ const StoreInfoCard = ({ heading, alignment }: StoreInfoCardProps) => {
                 {emails.map((email: any) => (
                   <div
                     className="pt-2.5 gap-x-1.5 flex flex-row items-center"
-                    key="email"
+                    key={email}
                   >
                     <MdOutlineEmail />
                     <Link
@@ -141,14 +126,6 @@ export const StoreInfoCardComponent: ComponentConfig<StoreInfoCardProps> = {
   fields: storeInfoCardFields,
   defaultProps: {
     heading: {
-      title: {
-        fieldName: '',
-        staticValue: ''
-      },
-      subtitle: {
-        fieldName: '',
-        staticValue: ''
-      },
       text: "Information",
       size: "subheading",
       color: "default",
@@ -156,7 +133,7 @@ export const StoreInfoCardComponent: ComponentConfig<StoreInfoCardProps> = {
     alignment: "items-center"
   },
   label: "Store Info Card",
-  render: ({ heading, alignment }) => <StoreInfoCard heading={heading} alignment={alignment} />,
+  render: ({ heading, alignment }) => <StoreInfoCard heading={heading} alignment={alignment}/>,
 };
 
 function formatPhoneNumber(phoneNumberString?: string) {
