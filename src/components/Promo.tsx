@@ -6,7 +6,7 @@ import { Section } from "./atoms/section";
 import { cn } from "../utils/cn";
 import "./index.css";
 import {
-  YextEntityField,
+  EntityFieldType,
   resolveYextEntityField,
   YextEntityFieldSelector,
 } from "@yext/visual-editor";
@@ -21,12 +21,12 @@ export type PromoProps = {
   promoTitle: {
     size: HeadingProps["size"];
     color: HeadingProps["color"];
-    text: YextEntityField;
+    text: EntityFieldType;
   };
   promoDescription: {
     size: BodyProps["size"];
     weight: BodyProps["weight"];
-    text: YextEntityField;
+    text: EntityFieldType;
   };
   promoCta?: {
     label?: string;
@@ -191,18 +191,16 @@ export const PromoComponent: ComponentConfig<PromoProps> = {
     imageMode: "right",
     promoTitle: {
       text: {
-        field: "",
-        constantValue: "Title",
-        constantValueEnabled: true
+        fieldName: "",
+        staticValue: "Title",
       },
       size: "section",
       color: "default",
     },
     promoDescription: {
       text: {
-        field: "",
-        constantValue: "Description",
-        constantValueEnabled: true
+        fieldName: "",
+        staticValue: "Description",
       },
       size: "base",
       weight: "default",

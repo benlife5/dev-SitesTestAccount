@@ -9,7 +9,7 @@ import { ButtonProps } from "./atoms/button";
 import { cn } from "../utils/cn";
 import {
   EntityField,
-  YextEntityField,
+  EntityFieldType,
   resolveYextEntityField,
   YextEntityFieldSelector,
 } from "@yext/visual-editor";
@@ -17,7 +17,7 @@ import "./index.css";
 import { config } from "../templates/location";
 
 export type HeroProps = {
-  hero: YextEntityField;
+  hero: EntityFieldType;
   imageMode: "left" | "right";
   name: {
     size: HeadingProps["size"];
@@ -205,8 +205,8 @@ export const HeroComponent: ComponentConfig<HeroProps> = {
   fields: heroFields,
   defaultProps: {
     hero: {
-      field: "c_hero",
-      constantValue: "",
+      fieldName: "c_hero",
+      staticValue: "",
     },
     imageMode: "left",
     name: {

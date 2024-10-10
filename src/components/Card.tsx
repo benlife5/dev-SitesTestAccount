@@ -5,7 +5,7 @@ import { Heading, HeadingProps } from "./atoms/heading";
 import { Section } from "./atoms/section";
 import "./index.css";
 import {
-  YextEntityField,
+  EntityFieldType,
   resolveYextEntityField,
   YextEntityFieldSelector,
 } from "@yext/visual-editor";
@@ -16,12 +16,12 @@ import { useDocument } from "@yext/pages/util";
 export type CardProps = {
   image: {
     photo: {
-      entityField: YextEntityField;
+      entityField: EntityFieldType;
     };
   };
   heading: {
     text: {
-      entityField: YextEntityField;
+      entityField: EntityFieldType;
     };
     size: HeadingProps["size"];
     color: HeadingProps["color"];
@@ -33,13 +33,13 @@ export type CardProps = {
   };
   body: {
     text: {
-      entityField: YextEntityField;
+      entityField: EntityFieldType;
     };
     size: BodyProps["size"];
     weight: BodyProps["weight"];
   };
   cta: {
-    entityField: YextEntityField;
+    entityField: EntityFieldType;
     variant?: CTAProps["variant"];
   };
   alignment: "items-start" | "items-center";
@@ -258,17 +258,16 @@ export const CardComponent: ComponentConfig<CardProps> = {
     image: {
       photo: {
         entityField: {
-          field: "",
-          constantValue: ""
+          fieldName: "",
+          staticValue: "",
         },
       },
     },
     heading: {
       text: {
         entityField: {
-          field: "",
-          constantValue: "Heading Text",
-          constantValueEnabled: true
+          fieldName: "",
+          staticValue: "Heading Text",
         },
       },
       size: "section",
@@ -282,9 +281,8 @@ export const CardComponent: ComponentConfig<CardProps> = {
     body: {
       text: {
         entityField: {
-          field: "",
-          constantValue: "Body Text",
-          constantValueEnabled: true
+          fieldName: "",
+          staticValue: "Body Text",
         },
       },
       size: "base",
@@ -292,8 +290,8 @@ export const CardComponent: ComponentConfig<CardProps> = {
     },
     cta: {
       entityField: {
-        field: "",
-        constantValue: ""
+        fieldName: "",
+        staticValue: "",
       },
     },
     alignment: "items-center",

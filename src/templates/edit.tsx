@@ -1,18 +1,18 @@
 import {
+  applyTheme,
   Editor,
   EntityFieldsProvider,
   usePlatformBridgeDocument,
   usePlatformBridgeEntityFields,
-  applyTheme,
 } from "@yext/visual-editor";
 import { componentRegistry } from "../ve.config";
 import {
   GetPath,
   TemplateProps,
   TemplateConfig,
-  GetHeadConfig,
-  TemplateRenderProps,
   HeadConfig,
+  TemplateRenderProps,
+  GetHeadConfig,
 } from "@yext/pages";
 import { DocumentProvider } from "@yext/pages/util";
 import { themeConfig } from "../../theme.config";
