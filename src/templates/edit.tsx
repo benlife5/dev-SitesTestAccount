@@ -29,6 +29,7 @@ export const config: TemplateConfig = {
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   document,
 }): HeadConfig => {
+  console.log("edit getHeadConfig", document);
   return {
     other: applyTheme(document, themeConfig),
   };
@@ -38,6 +39,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 const Edit: () => JSX.Element = () => {
   const entityDocument = usePlatformBridgeDocument();
   const entityFields = usePlatformBridgeEntityFields();
+  console.log("edit usePlatformBridgeDocument", document);
 
   return (
     <DocumentProvider value={entityDocument}>
