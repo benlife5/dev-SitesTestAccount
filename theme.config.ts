@@ -1,174 +1,170 @@
 import { ThemeConfig } from "@yext/visual-editor";
 
 export const themeConfig: ThemeConfig = {
-  borderRadius: {
-    label: "Border Radius",
-    styles: {
-      lg: {
-        label: "Radius",
-        type: "number",
-        plugin: "borderRadius",
-        default: "20px",
-      },
-    },
-  },
-  text: {
-    label: "Text",
-    styles: {
-      lg: {
-        label: "Large",
-        styles: {
-          fontSize: {
-            label: "Font Size",
-            type: "number",
-            plugin: "text",
-            default: "12pt",
-          },
-        },
-      },
-    },
-  },
   colors: {
     label: "Colors",
     styles: {
       text: {
-        label: "Text",
+        label: "Text Color",
         plugin: "colors",
         type: "color",
         default: "black",
       },
       border: {
-        label: "Border",
+        label: "Border Color",
         plugin: "colors",
         type: "color",
-        default: "hsl(214 100% 39%)",
+        default: "hsl(var(--border))",
       },
       input: {
-        label: "Input",
+        label: "Input Color",
         plugin: "colors",
         type: "color",
-        default: "hsl(214.3 31.8% 91.4%)",
+        default: "hsl(var(--input))",
       },
       ring: {
-        label: "Ring",
+        label: "Ring Color",
         plugin: "colors",
         type: "color",
-        default: "hsl(215 20.2% 65.1%)",
+        default: "hsl(var(--ring))",
       },
       background: {
-        label: "Background",
+        label: "Background Color",
         plugin: "colors",
         type: "color",
-        default: "hsl(0 0% 100%)",
+        default: "hsl(var(--background))",
       },
       foreground: {
-        label: "Foreground",
+        label: "Foreground Color",
         plugin: "colors",
         type: "color",
-        default: "hsl(0 2% 11%)",
+        default: "hsl(var(--foreground))",
       },
       primary: {
-        label: "Primary",
+        label: "Primary Color",
         styles: {
           DEFAULT: {
-            label: "Default",
+            label: "Primary Color (Default)",
             plugin: "colors",
             type: "color",
-            default: "hsl(0 68% 51%)",
+            default: "hsl(var(--primary))",
           },
           foreground: {
-            label: "Foreground",
+            label: "Primary Foreground Color",
             plugin: "colors",
             type: "color",
-            default: "hsl(0 0% 100%)",
+            default: "hsl(var(--primary-foreground))",
           },
         },
       },
       secondary: {
-        label: "Secondary",
+        label: "Secondary Color",
         styles: {
           DEFAULT: {
-            label: "Default",
+            label: "Secondary Color (Default)",
             plugin: "colors",
             type: "color",
-            default: "hsl(11 100% 26%)",
+            default: "hsl(var(--secondary))",
           },
           foreground: {
-            label: "Foreground",
+            label: "Secondary Foreground Color",
             plugin: "colors",
             type: "color",
-            default: "hsl(0 0% 100%)",
+            default: "hsl(var(--secondary-foreground))",
           },
         },
       },
       destructive: {
-        label: "Destructive",
+        label: "Destructive Color",
         styles: {
           DEFAULT: {
-            label: "Default",
+            label: "Destructive Color (Default)",
             plugin: "colors",
             type: "color",
-            default: "hsl(0 100% 50%)",
+            default: "hsl(var(--destructive))",
           },
           foreground: {
-            label: "Foreground",
+            label: "Destructive Foreground Color",
             plugin: "colors",
             type: "color",
-            default: "hsl(210 40% 98%)",
+            default: "hsl(var(--destructive-foreground))",
           },
         },
       },
       muted: {
-        label: "Muted",
+        label: "Muted Color",
         styles: {
           DEFAULT: {
-            label: "Default",
+            label: "Muted Color (Default)",
             plugin: "colors",
             type: "color",
-            default: "hsl(210 40% 96.1%)",
+            default: "hsl(var(--muted))",
           },
           foreground: {
-            label: "Foreground",
+            label: "Muted Foreground Color",
             plugin: "colors",
             type: "color",
-            default: "hsl(215.4 16.3% 46.9%)",
+            default: "hsl(var(--muted-foreground))",
           },
         },
       },
       accent: {
-        label: "Accent",
+        label: "Accent Color",
         styles: {
           DEFAULT: {
-            label: "Default",
+            label: "Accent Color (Default)",
             plugin: "colors",
             type: "color",
-            default: "hsl(166 55% 67%)",
+            default: "hsl(var(--accent))",
           },
           foreground: {
-            label: "Foreground",
+            label: "Accent Foreground Color",
             plugin: "colors",
             type: "color",
-            default: "hsl(0 0% 0%)",
+            default: "hsl(var(--accent-foreground))",
           },
         },
       },
       popover: {
-        label: "Secondary",
+        label: "Popover Color",
         styles: {
           DEFAULT: {
-            label: "Default",
+            label: "Popover Color (Default)",
             plugin: "colors",
             type: "color",
-            default: "hsl(225 7% 12%)",
+            default: "hsl(var(--popover))",
           },
           foreground: {
-            label: "Foreground",
+            label: "Popover Foreground Color",
             plugin: "colors",
             type: "color",
-            default: "hsl(0 0% 100%)",
+            default: "hsl(var(--popover-foreground))",
           },
         },
       },
     },
   },
+  borderRadius: {
+    label: "Border Radius",
+    styles: {
+      lg: {
+        label: "Large Border Radius",
+        plugin: "borderRadius",
+        type: "number",
+        default: `var(--radius)`,
+      },
+      md: {
+        label: "Medium Border Radius",
+        plugin: "borderRadius",
+        type: "number",
+        default: `calc(var(--radius) - 2px)`,
+      },
+      sm: {
+        label: "Small Border Radius",
+        plugin: "borderRadius",
+        type: "number",
+        default: "calc(var(--radius) - 4px)",
+      },
+    }
+  }
 };
