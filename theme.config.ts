@@ -8,7 +8,7 @@ export const themeConfig: ThemeConfig = {
         label: "Radius",
         type: "number",
         plugin: "borderRadius",
-        default: 20,
+        default: "20px",
       },
     },
   },
