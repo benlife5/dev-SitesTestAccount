@@ -14,7 +14,6 @@ import "./index.css";
 export type DeliveryPromoProps = {
   imageMode: "left" | "right";
   promoTitle: {
-    level: HeadingProps["level"];
     size: HeadingProps["size"];
     color: HeadingProps["color"];
   };
@@ -39,23 +38,10 @@ const deliveryPromoFields: Fields<DeliveryPromoProps> = {
     type: "object",
     label: "Promo Title",
     objectFields: {
-      level: {
-        label: "Heading Variant",
-        type: "radio",
-        options: [
-          { label: "Heading 1", value: 1 },
-          { label: "Heading 2", value: 2 },
-          { label: "Heading 3", value: 3 },
-          { label: "Heading 4", value: 4 },
-          { label: "Heading 5", value: 5 },
-          { label: "Heading 6", value: 6 },
-        ],
-      },
       size: {
         label: "Size",
         type: "radio",
         options: [
-          { label: "Default", value: "default" },
           { label: "Page", value: "page" },
           { label: "Section", value: "section" },
           { label: "Subheading", value: "subheading" },
@@ -143,11 +129,7 @@ const DeliveryPromo = ({
         <div className="flex flex-col justify-center gap-y-4 md:gap-y-8 p-4 md:px-16 md:py-0">
           {deliveryPromo?.title && (
             <EntityField displayName="Title" fieldId="c_deliveryPromo.title">
-              <Heading
-                size={promoTitle.size}
-                level={promoTitle.level}
-                color={promoTitle.color}
-              >
+              <Heading size={promoTitle.size} color={promoTitle.color}>
                 {deliveryPromo.title}
               </Heading>
             </EntityField>
@@ -185,7 +167,6 @@ export const DeliveryPromoComponent: ComponentConfig<DeliveryPromoProps> = {
   defaultProps: {
     imageMode: "right",
     promoTitle: {
-      level: 1,
       size: "section",
       color: "default",
     },

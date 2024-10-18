@@ -49,7 +49,6 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
       "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
     >;
 
-    console.log(level, cn(headingVariants({ size, color, className, level })));
     return (
       <Tag
         id="hello"
