@@ -5,20 +5,29 @@ import { cn } from "../../utils/cn";
 // Define the variants for the heading component
 const headingVariants = cva("font-bold", {
   variants: {
+    level: {
+      1: "font-heading1 text-heading1",
+      2: "font-heading2 text-heading2",
+      3: "font-heading3 text-heading3",
+      4: "font-heading4 text-heading4",
+      5: "font-heading5 text-heading5",
+      6: "font-heading6 text-heading6",
+    },
     size: {
+      default: "",
       page: "text-5xl",
       section: "text-[34px]",
       subheading: "text-2xl",
     },
     color: {
-      default: "text-default",
+      default: "",
       primary: "text-primary",
       secondary: "text-secondary",
       accent: "text-accent",
     },
   },
   defaultVariants: {
-    size: "section",
+    size: "default",
     color: "default",
   },
 });
@@ -40,16 +49,18 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
       "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
     >;
 
+    console.log(level, cn(headingVariants({ size, color, className, level })));
     return (
       <Tag
-        className={cn(headingVariants({ size, color, className }))}
+        id="hello"
+        className={cn(headingVariants({ size, color, className, level }))}
         ref={ref}
         {...props}
       >
         {props.children}
       </Tag>
     );
-  },
+  }
 );
 Heading.displayName = "Heading";
 

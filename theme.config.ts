@@ -2,11 +2,11 @@ import { ThemeConfig } from "@yext/visual-editor";
 
 const getColorOptions = () => {
   return [
-    { label: "Primary", value: "primary" },
-    { label: "Secondary", value: "secondary" },
-    { label: "Accent", value: "accent" },
-    { label: "Text", value: "text" },
-    { label: "Background", value: "background" },
+    { label: "Primary", value: "var(--colors-primary)" },
+    { label: "Secondary", value: "var(--colors-secondary)" },
+    { label: "Accent", value: "var(--colors-accent)" },
+    { label: "Text", value: "var(--colors-text)" },
+    { label: "Background", value: "var(--colors-background)" },
   ];
 };
 
@@ -34,163 +34,270 @@ const getTransformOptions = () => {
 };
 
 export const themeConfig: ThemeConfig = {
-  section: {
-    label: "Section",
+  fontSize: {
+    label: "Text Size",
     styles: {
-      maxContentWidth: {
-        label: "Maximum Content Width",
-        type: "select",
-        plugin: "maxWidth",
-        options: [
-          { label: "2XL", value: "1536px" },
-          { label: "XL", value: "1280px" },
-          { label: "LG", value: "1024px" },
-        ],
-        default: "1280px",
-      },
-      backgroundColor: {
-        label: "Background Color",
-        type: "select",
-        plugin: "backgroundColor",
-        options: getColorOptions(),
-        default: "background",
-      },
-      verticalPadding: {
-        label: "Vertical Padding",
+      heading1: {
+        label: "Heading 1",
         type: "number",
-        plugin: "padding",
-        default: 64,
+        plugin: "fontSize",
+        default: 24,
       },
-    },
-  },
-  colors: {
-    label: "Colors",
-    styles: {
-      primary: {
-        label: "Primary",
-        type: "color",
-        default: "#D83B18",
-        plugin: "colors",
+      heading2: {
+        label: "Heading 2",
+        type: "number",
+        plugin: "fontSize",
+        default: 24,
       },
-      secondary: {
-        label: "Secondary",
-        type: "color",
-        default: "#871900",
-        plugin: "colors",
+      heading3: {
+        label: "Heading 3",
+        type: "number",
+        plugin: "fontSize",
+        default: 24,
       },
-      accent: {
-        label: "Accent",
-        type: "color",
-        default: "#FFFFFF",
-        plugin: "colors",
+      heading4: {
+        label: "Heading 4",
+        type: "number",
+        plugin: "fontSize",
+        default: 24,
       },
-      text: {
-        label: "Text",
-        type: "color",
-        default: "#000000",
-        plugin: "colors",
+      heading5: {
+        label: "Heading 5",
+        type: "number",
+        plugin: "fontSize",
+        default: 24,
       },
-      background: {
-        label: "Background",
-        type: "color",
-        default: "#F7F7F7",
-        plugin: "colors",
+      heading6: {
+        label: "Heading 6",
+        type: "number",
+        plugin: "fontSize",
+        default: 24,
       },
-    },
-  },
-  headingText: {
-    label: "Heading Text",
-    styles: {
-      textSize: {
-        label: "Text Size",
+      button: {
+        label: "Button",
         type: "number",
         plugin: "fontSize",
         default: 12,
       },
-      fontWeight: {
-        label: "Font Weight",
-        type: "select",
-        plugin: "fontWeight",
-        default: "normal",
-        options: getWeightOptions(),
-      },
-      color: {
-        label: "Color",
-        type: "select",
-        plugin: "textColor",
-        options: getColorOptions(),
-        default: "primary",
-      },
-      textTransform: {
-        label: "Text Transform",
-        type: "select",
-        options: getTransformOptions(),
-        default: "none",
-        plugin: "textTransform",
-      },
-    },
-  },
-  bodyText: {
-    label: "Body Text",
-    styles: {
-      textSize: {
-        label: "Text Size",
+      body: {
+        label: "Body",
         type: "number",
         plugin: "fontSize",
         default: 12,
       },
-      fontWeight: {
-        label: "Font Weight",
-        type: "select",
-        plugin: "fontWeight",
-        default: "normal",
-        options: getWeightOptions(),
-      },
-      color: {
-        label: "Color",
-        type: "select",
-        plugin: "textColor",
-        options: getColorOptions(),
-        default: "primary",
-      },
-      textTransform: {
-        label: "Text Transform",
-        type: "select",
-        options: getTransformOptions(),
-        default: "none",
-        plugin: "textTransform",
-      },
     },
   },
-  button: {
-    label: "Buttons",
+  fontWeight: {
+    label: "Font Weight",
     styles: {
-      textSize: {
-        label: "Text Size",
-        type: "number",
-        plugin: "fontSize",
-        default: 12,
-      },
-      fontWeight: {
-        label: "Font Weight",
+      heading1: {
+        label: "Heading 1",
         type: "select",
         plugin: "fontWeight",
-        default: "normal",
         options: getWeightOptions(),
+        default: "700",
       },
-      textTransform: {
-        label: "Text Transform",
+      heading2: {
+        label: "Heading 2",
         type: "select",
-        options: getTransformOptions(),
-        default: "none",
-        plugin: "textTransform",
+        plugin: "fontWeight",
+        options: getWeightOptions(),
+        default: "700",
       },
-      borderRadius: {
-        label: "Border Radius",
-        type: "number",
-        plugin: "borderRadius",
-        default: 0,
+      heading3: {
+        label: "Heading 3",
+        type: "select",
+        plugin: "fontWeight",
+        options: getWeightOptions(),
+        default: "600",
+      },
+      heading4: {
+        label: "Heading 4",
+        type: "select",
+        plugin: "fontWeight",
+        options: getWeightOptions(),
+        default: "600",
+      },
+      heading5: {
+        label: "Heading 5",
+        type: "select",
+        plugin: "fontWeight",
+        options: getWeightOptions(),
+        default: "400",
+      },
+      heading6: {
+        label: "Heading 6",
+        type: "select",
+        plugin: "fontWeight",
+        options: getWeightOptions(),
+        default: "400",
+      },
+      body: {
+        label: "Body",
+        type: "select",
+        plugin: "fontWeight",
+        options: getWeightOptions(),
+        default: "400",
+      },
+      button: {
+        label: "Button",
+        type: "select",
+        plugin: "fontWeight",
+        options: getWeightOptions(),
+        default: "400",
       },
     },
   },
+  // textTransform: {
+  //   label: "Text Transform",
+  //   styles: {
+  //     h1: {
+  //       label: "h1",
+  //       type: "select",
+  //       plugin: "textTransform",
+  //       options: getTransformOptions(),
+  //       default: "none",
+  //     },
+  //     h2: {
+  //       label: "h2",
+  //       type: "select",
+  //       plugin: "textTransform",
+  //       options: getTransformOptions(),
+  //       default: "none",
+  //     },
+  //     h3: {
+  //       label: "h3",
+  //       type: "select",
+  //       plugin: "textTransform",
+  //       options: getTransformOptions(),
+  //       default: "none",
+  //     },
+  //     h4: {
+  //       label: "h4",
+  //       type: "select",
+  //       plugin: "textTransform",
+  //       options: getTransformOptions(),
+  //       default: "none",
+  //     },
+  //     h5: {
+  //       label: "h5",
+  //       type: "select",
+  //       plugin: "textTransform",
+  //       options: getTransformOptions(),
+  //       default: "none",
+  //     },
+  //     h6: {
+  //       label: "h6",
+  //       type: "select",
+  //       plugin: "textTransform",
+  //       options: getTransformOptions(),
+  //       default: "none",
+  //     },
+  //     body: {
+  //       label: "Body",
+  //       type: "select",
+  //       plugin: "textTransform",
+  //       options: getTransformOptions(),
+  //       default: "none",
+  //     },
+  //     button: {
+  //       label: "Button",
+  //       type: "select",
+  //       plugin: "textTransform",
+  //       options: getTransformOptions(),
+  //       default: "none",
+  //     },
+  //   },
+  // },
+  // colors: {
+  //   label: "Color",
+  //   styles: {
+  //     primary: {
+  //       label: "Primary",
+  //       type: "color",
+  //       default: "#D83B18",
+  //       plugin: "colors",
+  //     },
+  //     secondary: {
+  //       label: "Secondary",
+  //       type: "color",
+  //       default: "#871900",
+  //       plugin: "colors",
+  //     },
+  //     accent: {
+  //       label: "Accent",
+  //       type: "color",
+  //       default: "#FFFFFF",
+  //       plugin: "colors",
+  //     },
+  //     text: {
+  //       label: "Text",
+  //       type: "color",
+  //       default: "#000000",
+  //       plugin: "colors",
+  //     },
+  //     background: {
+  //       label: "Background",
+  //       type: "color",
+  //       default: "#F7F7F7",
+  //       plugin: "colors",
+  //     },
+  //     h1: {
+  //       label: "h1",
+  //       type: "select",
+  //       plugin: "color",
+  //       options: getColorOptions(),
+  //       default: "var(--colors-primary)",
+  //     },
+  //     h2: {
+  //       label: "h2",
+  //       type: "select",
+  //       plugin: "color",
+  //       options: getColorOptions(),
+  //       default: "var(--colors-primary)",
+  //     },
+  //     h3: {
+  //       label: "h3",
+  //       type: "select",
+  //       plugin: "color",
+  //       options: getColorOptions(),
+  //       default: "var(--colors-primary)",
+  //     },
+  //     h4: {
+  //       label: "h4",
+  //       type: "select",
+  //       plugin: "color",
+  //       options: getColorOptions(),
+  //       default: "var(--colors-primary)",
+  //     },
+  //     h5: {
+  //       label: "h5",
+  //       type: "select",
+  //       plugin: "color",
+  //       options: getColorOptions(),
+  //       default: "var(--colors-primary)",
+  //     },
+  //     h6: {
+  //       label: "h6",
+  //       type: "select",
+  //       plugin: "color",
+  //       options: getColorOptions(),
+  //       default: "var(--colors-primary)",
+  //     },
+  //     body: {
+  //       label: "Body",
+  //       type: "select",
+  //       plugin: "color",
+  //       options: getColorOptions(),
+  //       default: "var(--colors-primary)",
+  //     },
+  //     button: {
+  //       label: "Button",
+  //       type: "select",
+  //       plugin: "color",
+  //       options: getColorOptions(),
+  //       default: "var(--colors-primary)",
+  //     },
+  //   },
+  // },
 };
