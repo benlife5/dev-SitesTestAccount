@@ -24,15 +24,6 @@ const getWeightOptions = () => {
   ];
 };
 
-const getTransformOptions = () => {
-  return [
-    { label: "None", value: "none" },
-    { label: "Uppercase", value: "uppercase" },
-    { label: "Lowercase", value: "lowercase" },
-    { label: "Capitalize", value: "capitalize" },
-  ];
-};
-
 export const themeConfig: ThemeConfig = {
   fontSize: {
     label: "Text Size",
@@ -148,156 +139,95 @@ export const themeConfig: ThemeConfig = {
       },
     },
   },
-  // textTransform: {
-  //   label: "Text Transform",
-  //   styles: {
-  //     h1: {
-  //       label: "h1",
-  //       type: "select",
-  //       plugin: "textTransform",
-  //       options: getTransformOptions(),
-  //       default: "none",
-  //     },
-  //     h2: {
-  //       label: "h2",
-  //       type: "select",
-  //       plugin: "textTransform",
-  //       options: getTransformOptions(),
-  //       default: "none",
-  //     },
-  //     h3: {
-  //       label: "h3",
-  //       type: "select",
-  //       plugin: "textTransform",
-  //       options: getTransformOptions(),
-  //       default: "none",
-  //     },
-  //     h4: {
-  //       label: "h4",
-  //       type: "select",
-  //       plugin: "textTransform",
-  //       options: getTransformOptions(),
-  //       default: "none",
-  //     },
-  //     h5: {
-  //       label: "h5",
-  //       type: "select",
-  //       plugin: "textTransform",
-  //       options: getTransformOptions(),
-  //       default: "none",
-  //     },
-  //     h6: {
-  //       label: "h6",
-  //       type: "select",
-  //       plugin: "textTransform",
-  //       options: getTransformOptions(),
-  //       default: "none",
-  //     },
-  //     body: {
-  //       label: "Body",
-  //       type: "select",
-  //       plugin: "textTransform",
-  //       options: getTransformOptions(),
-  //       default: "none",
-  //     },
-  //     button: {
-  //       label: "Button",
-  //       type: "select",
-  //       plugin: "textTransform",
-  //       options: getTransformOptions(),
-  //       default: "none",
-  //     },
-  //   },
-  // },
-  // colors: {
-  //   label: "Color",
-  //   styles: {
-  //     primary: {
-  //       label: "Primary",
-  //       type: "color",
-  //       default: "#D83B18",
-  //       plugin: "colors",
-  //     },
-  //     secondary: {
-  //       label: "Secondary",
-  //       type: "color",
-  //       default: "#871900",
-  //       plugin: "colors",
-  //     },
-  //     accent: {
-  //       label: "Accent",
-  //       type: "color",
-  //       default: "#FFFFFF",
-  //       plugin: "colors",
-  //     },
-  //     text: {
-  //       label: "Text",
-  //       type: "color",
-  //       default: "#000000",
-  //       plugin: "colors",
-  //     },
-  //     background: {
-  //       label: "Background",
-  //       type: "color",
-  //       default: "#F7F7F7",
-  //       plugin: "colors",
-  //     },
-  //     h1: {
-  //       label: "h1",
-  //       type: "select",
-  //       plugin: "color",
-  //       options: getColorOptions(),
-  //       default: "var(--colors-primary)",
-  //     },
-  //     h2: {
-  //       label: "h2",
-  //       type: "select",
-  //       plugin: "color",
-  //       options: getColorOptions(),
-  //       default: "var(--colors-primary)",
-  //     },
-  //     h3: {
-  //       label: "h3",
-  //       type: "select",
-  //       plugin: "color",
-  //       options: getColorOptions(),
-  //       default: "var(--colors-primary)",
-  //     },
-  //     h4: {
-  //       label: "h4",
-  //       type: "select",
-  //       plugin: "color",
-  //       options: getColorOptions(),
-  //       default: "var(--colors-primary)",
-  //     },
-  //     h5: {
-  //       label: "h5",
-  //       type: "select",
-  //       plugin: "color",
-  //       options: getColorOptions(),
-  //       default: "var(--colors-primary)",
-  //     },
-  //     h6: {
-  //       label: "h6",
-  //       type: "select",
-  //       plugin: "color",
-  //       options: getColorOptions(),
-  //       default: "var(--colors-primary)",
-  //     },
-  //     body: {
-  //       label: "Body",
-  //       type: "select",
-  //       plugin: "color",
-  //       options: getColorOptions(),
-  //       default: "var(--colors-primary)",
-  //     },
-  //     button: {
-  //       label: "Button",
-  //       type: "select",
-  //       plugin: "color",
-  //       options: getColorOptions(),
-  //       default: "var(--colors-primary)",
-  //     },
-  //   },
-  // },
+  colors: {
+    label: "Color",
+    styles: {
+      primary: {
+        label: "Primary",
+        type: "color",
+        default: "#D83B18",
+        plugin: "colors",
+      },
+      secondary: {
+        label: "Secondary",
+        type: "color",
+        default: "#871900",
+        plugin: "colors",
+      },
+      accent: {
+        label: "Accent",
+        type: "color",
+        default: "#FFFFFF",
+        plugin: "colors",
+      },
+      text: {
+        label: "Text",
+        type: "color",
+        default: "#000000",
+        plugin: "colors",
+      },
+      background: {
+        label: "Background",
+        type: "color",
+        default: "#F7F7F7",
+        plugin: "colors",
+      },
+      heading1: {
+        label: "Heading 1",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-primary)",
+      },
+      heading2: {
+        label: "Heading 2",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-primary)",
+      },
+      heading3: {
+        label: "Heading 3",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-primary)",
+      },
+      heading4: {
+        label: "Heading 4",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-primary)",
+      },
+      heading5: {
+        label: "Heading 5",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-primary)",
+      },
+      heading6: {
+        label: "Heading 6",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-primary)",
+      },
+      body: {
+        label: "Body",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-primary)",
+      },
+      button: {
+        label: "Button",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-primary)",
+      },
+    },
+  },
 };
