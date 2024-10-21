@@ -1,0 +1,34 @@
+Tailwind classes created by theme.config
+
+font size and text color
+text-heading1
+text-heading2
+text-heading3
+text-heading4
+text-heading5
+text-heading6
+text-button
+text-body
+
+font weight
+font-heading1
+font-heading2
+font-heading3
+font-heading4
+font-heading5
+font-heading6
+font-button
+font-body
+
+to use colors other places
+text-primary
+text-secondary
+text-accent
+text-text
+text-background
+
+background color
+bg-main
+
+border radius
+rounded-button
