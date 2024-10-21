@@ -28,49 +28,49 @@ export const themeConfig: ThemeConfig = {
   fontSize: {
     label: "Text Size",
     styles: {
-      heading1: {
+      "heading1-fontSize": {
         label: "Heading 1",
         type: "number",
         plugin: "fontSize",
         default: 24,
       },
-      heading2: {
+      "heading2-fontSize": {
         label: "Heading 2",
         type: "number",
         plugin: "fontSize",
         default: 24,
       },
-      heading3: {
+      "heading3-fontSize": {
         label: "Heading 3",
         type: "number",
         plugin: "fontSize",
         default: 24,
       },
-      heading4: {
+      "heading4-fontSize": {
         label: "Heading 4",
         type: "number",
         plugin: "fontSize",
         default: 24,
       },
-      heading5: {
+      "heading5-fontSize": {
         label: "Heading 5",
         type: "number",
         plugin: "fontSize",
         default: 24,
       },
-      heading6: {
+      "heading6-fontSize": {
         label: "Heading 6",
         type: "number",
         plugin: "fontSize",
         default: 24,
       },
-      button: {
+      "button-fontSize": {
         label: "Button",
         type: "number",
         plugin: "fontSize",
         default: 12,
       },
-      body: {
+      "body-fontSize": {
         label: "Body",
         type: "number",
         plugin: "fontSize",
@@ -81,56 +81,56 @@ export const themeConfig: ThemeConfig = {
   fontWeight: {
     label: "Font Weight",
     styles: {
-      heading1: {
+      "heading1-fontWeight": {
         label: "Heading 1",
         type: "select",
         plugin: "fontWeight",
         options: getWeightOptions(),
         default: "700",
       },
-      heading2: {
+      "heading2-fontWeight": {
         label: "Heading 2",
         type: "select",
         plugin: "fontWeight",
         options: getWeightOptions(),
         default: "700",
       },
-      heading3: {
+      "heading3-fontWeight": {
         label: "Heading 3",
         type: "select",
         plugin: "fontWeight",
         options: getWeightOptions(),
         default: "600",
       },
-      heading4: {
+      "heading4-fontWeight": {
         label: "Heading 4",
         type: "select",
         plugin: "fontWeight",
         options: getWeightOptions(),
         default: "600",
       },
-      heading5: {
+      "heading5-fontWeight": {
         label: "Heading 5",
         type: "select",
         plugin: "fontWeight",
         options: getWeightOptions(),
         default: "400",
       },
-      heading6: {
+      "heading6-fontWeight": {
         label: "Heading 6",
         type: "select",
         plugin: "fontWeight",
         options: getWeightOptions(),
         default: "400",
       },
-      body: {
+      "body-fontWeight": {
         label: "Body",
         type: "select",
         plugin: "fontWeight",
         options: getWeightOptions(),
         default: "400",
       },
-      button: {
+      "button-fontWeight": {
         label: "Button",
         type: "select",
         plugin: "fontWeight",
@@ -172,56 +172,56 @@ export const themeConfig: ThemeConfig = {
         default: "#F7F7F7",
         plugin: "colors",
       },
-      heading1: {
+      "heading1-color": {
         label: "Heading 1",
         type: "select",
         plugin: "color",
         options: getColorOptions(),
         default: "var(--colors-primary)",
       },
-      heading2: {
+      "heading2-color": {
         label: "Heading 2",
         type: "select",
         plugin: "color",
         options: getColorOptions(),
         default: "var(--colors-primary)",
       },
-      heading3: {
+      "heading3-color": {
         label: "Heading 3",
         type: "select",
         plugin: "color",
         options: getColorOptions(),
         default: "var(--colors-primary)",
       },
-      heading4: {
+      "heading4-color": {
         label: "Heading 4",
         type: "select",
         plugin: "color",
         options: getColorOptions(),
         default: "var(--colors-primary)",
       },
-      heading5: {
+      "heading5-color": {
         label: "Heading 5",
         type: "select",
         plugin: "color",
         options: getColorOptions(),
         default: "var(--colors-primary)",
       },
-      heading6: {
+      "heading6-color": {
         label: "Heading 6",
         type: "select",
         plugin: "color",
         options: getColorOptions(),
         default: "var(--colors-primary)",
       },
-      body: {
+      "body-color": {
         label: "Body",
         type: "select",
         plugin: "color",
         options: getColorOptions(),
         default: "var(--colors-primary)",
       },
-      button: {
+      "button-color": {
         label: "Button",
         type: "select",
         plugin: "color",
