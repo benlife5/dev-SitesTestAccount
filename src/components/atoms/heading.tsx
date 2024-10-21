@@ -6,12 +6,12 @@ import { cn } from "../../utils/cn";
 const headingVariants = cva("font-bold", {
   variants: {
     level: {
-      1: "font-heading1 text-heading1",
-      2: "font-heading2 text-heading2",
-      3: "font-heading3 text-heading3",
-      4: "font-heading4 text-heading4",
-      5: "font-heading5 text-heading5",
-      6: "font-heading6 text-heading6",
+      1: "font-heading1 text-heading1-fontSize text-heading1-color",
+      2: "font-heading2 text-heading2-fontSize text-heading2-color",
+      3: "font-heading3 text-heading3-fontSize text-heading3-color",
+      4: "font-heading4 text-heading4-fontSize text-heading4-color",
+      5: "font-heading5 text-heading5-fontSize text-heading5-color",
+      6: "font-heading6 text-heading6-fontSize text-heading6-color",
     },
     size: {
       default: "",
