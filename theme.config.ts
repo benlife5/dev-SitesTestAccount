@@ -230,4 +230,27 @@ export const themeConfig: ThemeConfig = {
       },
     },
   },
+  backgroundColor: {
+    label: "Background Color",
+    styles: {
+      main: {
+        label: "Background Color",
+        type: "select",
+        plugin: "backgroundColor",
+        options: getColorOptions(),
+        default: "var(--colors-background)",
+      },
+    },
+  },
+  borderRadius: {
+    label: "Border Radius",
+    styles: {
+      button: {
+        label: "Button",
+        type: "number",
+        plugin: "borderRadius",
+        default: 0,
+      },
+    },
+  },
 };
