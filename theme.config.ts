@@ -253,4 +253,31 @@ export const themeConfig: ThemeConfig = {
       },
     },
   },
+  maxWidth: {
+    label: "Max Width",
+    styles: {
+      grid: {
+        label: "Grid Section",
+        type: "select",
+        plugin: "maxWidth",
+        options: [
+          { label: "2XL", value: "1536px" },
+          { label: "XL", value: "1280px" },
+          { label: "LG", value: "1024px" },
+        ],
+        default: "1280px",
+      },
+    },
+  },
+  padding: {
+    label: "Vertical Padding",
+    styles: {
+      grid: {
+        label: "Grid Section",
+        type: "number",
+        plugin: "maxWidth",
+        default: 10,
+      },
+    },
+  },
 };

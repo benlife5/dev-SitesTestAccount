@@ -32,3 +32,9 @@ bg-main
 
 border radius
 rounded-button
+
+max width
+max-w-grid
+
+vertical padding
+py-grid
