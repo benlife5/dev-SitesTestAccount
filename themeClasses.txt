@@ -1,0 +1,50 @@
+Tailwind classes created by theme.config
+
+font size
+text-heading1-fontSize
+text-heading2-fontSize
+text-heading3-fontSize
+text-heading4-fontSize
+text-heading5-fontSize
+text-heading6-fontSize
+text-button-fontSize
+text-body-fontSize
+
+text color
+text-heading1-color
+text-heading2-color
+text-heading3-color
+text-heading4-color
+text-heading5-color
+text-heading6-color
+text-button-color
+text-body-color
+
+font weight
+font-heading1
+font-heading2
+font-heading3
+font-heading4
+font-heading5
+font-heading6
+font-button
+font-body
+
+to use colors other places
+text-primary
+text-secondary
+text-accent
+text-text
+text-background
+
+background color
+bg-main
+
+border radius
+rounded-button
+
+max width
+max-w-grid
+
+vertical padding
+py-grid
