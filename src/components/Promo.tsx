@@ -9,9 +9,9 @@ import {
   YextEntityField,
   resolveYextEntityField,
   YextEntityFieldSelector,
+  useDocument,
 } from "@yext/visual-editor";
 import { config } from "../templates/location";
-import { useDocument } from "@yext/pages/util";
 import { LocationStream } from "../types/autogen";
 
 const PLACEHOLDER_IMAGE_URL = "https://placehold.co/640x360";
@@ -193,7 +193,7 @@ export const PromoComponent: ComponentConfig<PromoProps> = {
       text: {
         field: "",
         constantValue: "Title",
-        constantValueEnabled: true
+        constantValueEnabled: true,
       },
       size: "section",
       color: "default",
@@ -202,7 +202,7 @@ export const PromoComponent: ComponentConfig<PromoProps> = {
       text: {
         field: "",
         constantValue: "Description",
-        constantValueEnabled: true
+        constantValueEnabled: true,
       },
       size: "base",
       weight: "default",

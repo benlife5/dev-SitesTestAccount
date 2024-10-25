@@ -6,7 +6,7 @@ import {
 import { BodyProps, Body } from "./atoms/body";
 import { ComponentConfig, Fields } from "@measured/puck";
 import { config } from "../templates/location";
-import { useDocument } from "@yext/pages/util";
+import { useDocument } from "@yext/visual-editor";
 import { LocationStream } from "../types/autogen";
 
 export type BannerProps = {
@@ -97,7 +97,7 @@ export const BannerComponent: ComponentConfig<BannerProps> = {
     text: {
       field: "",
       constantValue: "Banner Text",
-      constantValueEnabled: true
+      constantValueEnabled: true,
     },
     textAlignment: "justify-center",
     textSize: "base",

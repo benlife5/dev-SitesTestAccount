@@ -8,14 +8,17 @@ import {
   GetHeadConfig,
   HeadConfig,
 } from "@yext/pages";
-import { DocumentProvider } from "@yext/visual-editor";
 import { Config, Render } from "@measured/puck";
-import { locationConfig } from "../ve.config";
-import { resolveVisualEditorData, applyTheme } from "@yext/visual-editor";
+import { storeConfig } from "../ve.config";
+import {
+  resolveVisualEditorData,
+  applyTheme,
+  DocumentProvider,
+} from "@yext/visual-editor";
 import { themeConfig } from "../../theme.config";
 
 export const config = {
-  name: "location",
+  name: "store",
   stream: {
     $id: "location-stream",
     filter: {
@@ -55,7 +58,7 @@ export const config = {
 } as const satisfies TemplateConfig;
 
 export const transformProps = async (data: any) => {
-  return resolveVisualEditorData(data, "location");
+  return resolveVisualEditorData(data, "store");
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
@@ -79,20 +82,24 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug
-    ? document.slug
-    : `${document.locale}/${document.address.region}/${document.address.city}/${
-        document.address.line1
-      }-${document.id.toString()}`;
+  return (
+    "store/" +
+    (document.slug
+      ? document.slug
+      : `${document.locale}/${document.address.region}/${document.address.city}/${
+          document.address.line1
+        }-${document.id.toString()}`)
+  );
 };
 
-const Location: Template<TemplateRenderProps> = ({ document }) => {
+const Store: Template<TemplateRenderProps> = ({ document }) => {
   const { visualTemplate } = document;
+
   return (
     <DocumentProvider value={document}>
-      <Render config={locationConfig as Config} data={visualTemplate} />
+      <Render config={storeConfig as Config} data={visualTemplate} />
     </DocumentProvider>
   );
 };
 
-export default Location;
+export default Store;

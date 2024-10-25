@@ -8,10 +8,10 @@ import {
   YextEntityField,
   resolveYextEntityField,
   YextEntityFieldSelector,
+  useDocument,
 } from "@yext/visual-editor";
 import { config } from "../templates/location";
 import { LocationStream, Cta, ComplexImage } from "../types/autogen";
-import { useDocument } from "@yext/pages/util";
 
 export type CardProps = {
   image: {
@@ -259,7 +259,7 @@ export const CardComponent: ComponentConfig<CardProps> = {
       photo: {
         entityField: {
           field: "",
-          constantValue: ""
+          constantValue: "",
         },
       },
     },
@@ -268,7 +268,7 @@ export const CardComponent: ComponentConfig<CardProps> = {
         entityField: {
           field: "",
           constantValue: "Heading Text",
-          constantValueEnabled: true
+          constantValueEnabled: true,
         },
       },
       size: "section",
@@ -284,7 +284,7 @@ export const CardComponent: ComponentConfig<CardProps> = {
         entityField: {
           field: "",
           constantValue: "Body Text",
-          constantValueEnabled: true
+          constantValueEnabled: true,
         },
       },
       size: "base",
@@ -293,7 +293,7 @@ export const CardComponent: ComponentConfig<CardProps> = {
     cta: {
       entityField: {
         field: "",
-        constantValue: ""
+        constantValue: "",
       },
     },
     alignment: "items-center",
