@@ -105,6 +105,6 @@ export const storeConfig: Config<LocationProps> = {
 };
 
 export const componentRegistry = new Map<string, Config<any>>([
-  ["location", locationConfig],
-  ["store", storeConfig],
+  ["Location", locationConfig],
+  ["Key Initiative", storeConfig],
 ]);

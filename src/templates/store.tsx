@@ -18,36 +18,13 @@ import {
 import { themeConfig } from "../../theme.config";
 
 export const config = {
-  name: "store",
+  name: "Key Initiative",
   stream: {
-    $id: "location-stream",
+    $id: "ki-stream",
     filter: {
-      entityTypes: ["location"],
+      entityTypes: ["keyInitiative"],
     },
-    fields: [
-      "id",
-      "uid",
-      "meta",
-      "slug",
-      "visualConfigurations",
-      "pageLayouts.visualConfiguration",
-      "name",
-      "hours",
-      "address",
-      "c_productSection.sectionTitle",
-      "c_productSection.linkedProducts.name",
-      "c_productSection.linkedProducts.c_productPromo",
-      "c_productSection.linkedProducts.c_description",
-      "c_productSection.linkedProducts.c_coverPhoto",
-      "c_productSection.linkedProducts.c_productCTA",
-      "c_hero",
-      "c_faqSection.linkedFAQs.question",
-      "c_faqSection.linkedFAQs.answerV2",
-      "additionalHoursText",
-      "mainPhone",
-      "emails",
-      "c_deliveryPromo",
-    ],
+    fields: ["id", "uid", "meta", "slug", "name"],
     localization: {
       locales: ["en"],
     },
