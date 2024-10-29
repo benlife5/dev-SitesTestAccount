@@ -4,33 +4,30 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "py-4 components inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ",
   {
     variants: {
       variant: {
-        default:
-          "bg-primary text-primary-foreground hover:bg-secondary active:bg-primary-foreground active:text-primary active:border-primary focus:border-2",
+        primary:
+          "bg-button-primary text-button-primary-foreground hover:bg-button-secondary active:bg-button-primary-foreground active:text-button-primary active:border-button-primary focus:border-2",
         secondary:
-          "bg-primary-foreground text-primary border-2 border-primary hover:bg-primary hover:text-primary-foreground active:bg-secondary active:text-secondary-foreground focus:border-2",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-button-primary-foreground text-button-primary border-2 border-button-primary hover:bg-button-primary hover:text-button-primary-foreground active:bg-button-secondary active:text-button-secondary-foreground focus:border-2",
         outline:
-          "border-primary border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "border-button-primary bg-background hover:bg-accent hover:text-button-primary",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 rounded-md px-4 py-2",
+        default: "w-full md:w-fit h-10 rounded-md px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "primary",
       size: "default",
     },
-  },
+  }
 );
 
 export interface ButtonProps
@@ -43,13 +40,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
-       <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref}
-          {...props}
-        />
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
     );
-  },
+  }
 );
 Button.displayName = "Button";
 

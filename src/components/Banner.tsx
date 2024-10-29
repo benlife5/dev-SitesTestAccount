@@ -2,11 +2,11 @@ import {
   YextEntityField,
   resolveYextEntityField,
   YextEntityFieldSelector,
+  useDocument,
 } from "@yext/visual-editor";
 import { BodyProps, Body } from "./atoms/body";
 import { ComponentConfig, Fields } from "@measured/puck";
 import { config } from "../templates/location";
-import { useDocument } from "@yext/visual-editor";
 import { LocationStream } from "../types/autogen";
 
 export type BannerProps = {
@@ -92,12 +92,13 @@ const Banner = ({
 };
 
 export const BannerComponent: ComponentConfig<BannerProps> = {
+  label: "Banner",
   fields: bannerFields,
   defaultProps: {
     text: {
       field: "",
       constantValue: "Banner Text",
-      constantValueEnabled: true,
+      constantValueEnabled: true
     },
     textAlignment: "justify-center",
     textSize: "base",

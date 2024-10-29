@@ -2,12 +2,13 @@ import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
 
-const sectionVariants = cva(" px-4  md:px-8 py-16 mx-auto", {
+const sectionVariants = cva("mx-auto", {
   variants: {
     padding: {
-      default: "py-16",
-      small: "px-4 py-8",
-      large: "px-[200px] py-24",
+      default: "px-4 py-16 md:px-8",
+      none: "p-0",
+      small: "px-4 py-8 md:px-8",
+      large: "px-[200px] py-24 md:px-8",
     },
     maxWidth: {
       default: "max-w-6xl",
@@ -28,7 +29,7 @@ export interface SectionProps
 const Section = React.forwardRef<HTMLDivElement, SectionProps>(
   ({ className, padding, maxWidth, ...props }, ref) => {
     return (
-      <div className="bg-[#F9FAFB]">
+      <div className="components bg-main">
         <div
           className={cn(sectionVariants({ padding, maxWidth, className }))}
           ref={ref}
@@ -38,7 +39,7 @@ const Section = React.forwardRef<HTMLDivElement, SectionProps>(
         </div>
       </div>
     );
-  },
+  }
 );
 Section.displayName = "Section";
 

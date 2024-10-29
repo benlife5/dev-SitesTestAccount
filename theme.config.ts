@@ -7,6 +7,7 @@ const getColorOptions = () => {
     { label: "Accent", value: "var(--colors-accent)" },
     { label: "Text", value: "var(--colors-text)" },
     { label: "Background", value: "var(--colors-background)" },
+    { label: "Foreground", value: "var(--colors-foreground)" },
   ];
 };
 
@@ -172,6 +173,18 @@ export const themeConfig: ThemeConfig = {
         default: "#F7F7F7",
         plugin: "colors",
       },
+      foreground: {
+        label: "Foreground",
+        type: "color",
+        plugin: "color",
+        default: "#000000",
+      },
+      footer: {
+        label: "Footer",
+        type: "color",
+        plugin: "color",
+        default: "#000000",
+      },
       "heading1-color": {
         label: "Heading 1",
         type: "select",
@@ -219,14 +232,21 @@ export const themeConfig: ThemeConfig = {
         type: "select",
         plugin: "color",
         options: getColorOptions(),
-        default: "var(--colors-primary)",
+        default: "var(--colors-text)",
       },
-      "button-color": {
-        label: "Button",
+      "button-primary": {
+        label: "Button Primary",
         type: "select",
         plugin: "color",
         options: getColorOptions(),
         default: "var(--colors-primary)",
+      },
+      "button-primary-foreground": {
+        label: "Button Primary Foreground",
+        type: "select",
+        plugin: "color",
+        options: getColorOptions(),
+        default: "var(--colors-foreground)",
       },
     },
   },
@@ -240,16 +260,23 @@ export const themeConfig: ThemeConfig = {
         options: getColorOptions(),
         default: "var(--colors-background)",
       },
+      grid: {
+        label: "Grid Background",
+        type: "select",
+        plugin: "backgroundColor",
+        options: getColorOptions(),
+        default: "var(--colors-background)",
+      },
     },
   },
   borderRadius: {
     label: "Border Radius",
     styles: {
-      button: {
+      lg: {
         label: "Button",
         type: "number",
         plugin: "borderRadius",
-        default: 0,
+        default: 20,
       },
     },
   },
@@ -269,14 +296,14 @@ export const themeConfig: ThemeConfig = {
       },
     },
   },
-  padding: {
-    label: "Vertical Padding",
+  gap: {
+    label: "Vertical Spacing",
     styles: {
       grid: {
         label: "Grid Section",
         type: "number",
-        plugin: "maxWidth",
-        default: 10,
+        plugin: "gap",
+        default: 8,
       },
     },
   },

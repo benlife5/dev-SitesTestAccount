@@ -21,12 +21,12 @@ export type PromoProps = {
   promoTitle: {
     size: HeadingProps["size"];
     color: HeadingProps["color"];
-    text: YextEntityField;
+    text: YextEntityField<string>;
   };
   promoDescription: {
     size: BodyProps["size"];
     weight: BodyProps["weight"];
-    text: YextEntityField;
+    text: YextEntityField<string>;
   };
   promoCta?: {
     label?: string;
@@ -50,7 +50,7 @@ const promoFields: Fields<PromoProps> = {
     type: "object",
     label: "Promo Title",
     objectFields: {
-      text: YextEntityFieldSelector<typeof config>({
+      text: YextEntityFieldSelector<typeof config, string>({
         label: "Entity Field",
         filter: {
           types: ["type.string"],
@@ -80,7 +80,7 @@ const promoFields: Fields<PromoProps> = {
     type: "object",
     label: "Promo Description",
     objectFields: {
-      text: YextEntityFieldSelector<typeof config>({
+      text: YextEntityFieldSelector<typeof config, string>({
         label: "Entity Field",
         filter: {
           types: ["type.string"],
@@ -193,7 +193,7 @@ export const PromoComponent: ComponentConfig<PromoProps> = {
       text: {
         field: "",
         constantValue: "Title",
-        constantValueEnabled: true,
+        constantValueEnabled: true
       },
       size: "section",
       color: "default",
@@ -202,7 +202,7 @@ export const PromoComponent: ComponentConfig<PromoProps> = {
       text: {
         field: "",
         constantValue: "Description",
-        constantValueEnabled: true,
+        constantValueEnabled: true
       },
       size: "base",
       weight: "default",
