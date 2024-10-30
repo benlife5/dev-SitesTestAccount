@@ -7,7 +7,7 @@ import { cn } from "../utils/cn";
 const backgroundVariants = cva("components", {
   variants: {
     backgroundColor: {
-      default: "bg-grid-background-color",
+      default: "bg-grid-backgroundColor",
       primary: "bg-palette-primary",
       secondary: "bg-palette-secondary",
       accent: "bg-palette-accent",
