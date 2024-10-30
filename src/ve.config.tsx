@@ -6,14 +6,11 @@ import {
 } from "./components/BodyText.js";
 
 import {
-  ImageWrapperComponent as ImageWrapper,
-  ImageWrapperProps,
-} from "./components/Image.js";
-
-import {
   HeadingTextComponent as HeadingText,
   HeadingTextProps,
-} from "./components/HeadingText";
+  ImageWrapperComponent as ImageWrapper,
+  ImageWrapperProps,
+} from "@yext/visual-editor";
 
 // import { HeroComponent as Hero, HeroProps } from "./components/Hero";
 import {
