@@ -7,10 +7,6 @@ export default {
   theme: {
     extend: themeResolver(
       {
-        borderRadius: {
-          md: `var(--borderRadius-lg)`,
-          sm: "var(--borderRadius-lg)",
-        },
         keyframes: {
           "accordion-down": {
             from: { height: "0" },
