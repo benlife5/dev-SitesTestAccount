@@ -10,7 +10,7 @@ import {
 import { cn } from "../utils/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const textListVariants = cva("list-inside text-bodyFontSize p-8", {
+const textListVariants = cva("list-inside text-body-FontSize p-8", {
   variants: {
     fontWeight: {
       default: "font-body-fontWeight",

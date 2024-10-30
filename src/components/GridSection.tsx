@@ -7,12 +7,12 @@ import { cn } from "../utils/cn";
 const backgroundVariants = cva("components", {
   variants: {
     backgroundColor: {
-      default: "text-grid-background-color",
-      primary: "text-palette-primary",
-      secondary: "text-palette-secondary",
-      accent: "text-palette-accent",
-      text: "text-palette-text",
-      background: "text-palette-background",
+      default: "bg-grid-background-color",
+      primary: "bg-palette-primary",
+      secondary: "bg-palette-secondary",
+      accent: "bg-palette-accent",
+      text: "bg-palette-text",
+      background: "bg-palette-background",
     },
     maxContentWidth: {
       default: "max-w-grid-maxWidth",
