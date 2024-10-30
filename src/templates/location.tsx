@@ -48,7 +48,6 @@ export const config = {
       "emails",
       "services",
       "c_deliveryPromo",
-      "c_testImage",
     ],
     localization: {
       locales: ["en"],
