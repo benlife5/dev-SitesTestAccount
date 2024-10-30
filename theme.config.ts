@@ -288,16 +288,4 @@ export const themeConfig: ThemeConfig = {
       },
     },
   },
-  page: {
-    label: "Page",
-    styles: {
-      footer: {
-        label: "Footer Background Color",
-        type: "select",
-        plugin: "colors",
-        options: getColorOptions(),
-        default: "var(--colors-palette-primary)",
-      },
-    },
-  },
 };
