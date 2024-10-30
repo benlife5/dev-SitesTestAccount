@@ -1,15 +1,12 @@
 import type { Config } from "@measured/puck";
 
 import {
-  BodyTextComponent as BodyText,
-  BodyTextProps,
-} from "./components/BodyText.js";
-
-import {
   HeadingTextComponent as HeadingText,
   HeadingTextProps,
   ImageWrapperComponent as ImageWrapper,
   ImageWrapperProps,
+  BodyTextComponent as BodyText,
+  BodyTextProps,
 } from "@yext/visual-editor";
 
 // import { HeroComponent as Hero, HeroProps } from "./components/Hero";
