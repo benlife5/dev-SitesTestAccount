@@ -14,7 +14,7 @@ const buttonVariants = cva(
           "bg-palette-secondary text-palette-primary border-2 border-palette-secondary hover:border-palette-primary focus:border-palette-primary active:bg-palette-primary active:text-palette-secondary active:border-palette-secondary",
         outline:
           "border-palette-primary bg-palette-background border-2 hover:border-palette-background focus:border-palette-background active:bg-palette-primary active:text-palette-background",
-        link: "text-palette-primary underline-offset-4 hover:underline",
+        link: "text-palette-primary underline-offset-4 underline hover:no-underline",
       },
       size: {
         default: "w-full md:w-fit h-10 px-4 py-2",
