@@ -15,7 +15,7 @@ export type BannerProps = {
   textSize: BodyProps["size"];
   fontWeight: BodyProps["weight"];
   textColor: BodyProps["color"];
-  backgroundColor: "bg-white" | "bg-primary" | "bg-secondary";
+  backgroundColor: "bg-white" | "bg-palette-primary" | "bg-palette-secondary";
 };
 
 const bannerFields: Fields<BannerProps> = {
@@ -98,7 +98,7 @@ export const BannerComponent: ComponentConfig<BannerProps> = {
     text: {
       field: "",
       constantValue: "Banner Text",
-      constantValueEnabled: true
+      constantValueEnabled: true,
     },
     textAlignment: "justify-center",
     textSize: "base",

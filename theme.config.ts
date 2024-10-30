@@ -6,16 +6,7 @@ const getColorOptions = () => {
     { label: "Secondary", value: "var(--colors-palette-secondary)" },
     { label: "Accent", value: "var(--colors-palette-accent)" },
     { label: "Text", value: "var(--colors-palette-text)" },
-    { label: "Background", value: "var(--colors-palette-background-default)" },
-    { label: "Foreground", value: "var(--colors-palette-foreground)" },
-  ];
-};
-
-const getBackgroundColorOptions = () => {
-  return [
-    { label: "Light", value: "var(--colors-palette-background-light)" },
-    { label: "Default", value: "var(--colors-palette-background-default)" },
-    { label: "Dark", value: "var(--colors-palette-background-dark)" },
+    { label: "Background", value: "var(--colors-palette-background)" },
   ];
 };
 
@@ -63,27 +54,6 @@ export const themeConfig: ThemeConfig = {
       },
       background: {
         label: "Background",
-        plugin: "colors",
-        styles: {
-          light: {
-            label: "Light",
-            type: "color",
-            default: "#FFFFFF",
-          },
-          DEFAULT: {
-            label: "Default",
-            type: "color",
-            default: "#F7F7F7",
-          },
-          dark: {
-            label: "Dark",
-            type: "color",
-            default: "#F0F0F0",
-          },
-        },
-      },
-      foreground: {
-        label: "Foreground",
         type: "color",
         plugin: "colors",
         default: "#000000",
@@ -259,20 +229,9 @@ export const themeConfig: ThemeConfig = {
       color: {
         label: "Text Color",
         plugin: "colors",
-        styles: {
-          light: {
-            label: "Light Mode",
-            type: "select",
-            options: getColorOptions(),
-            default: "var(--colors-palette-text)",
-          },
-          dark: {
-            label: "Dark Mode",
-            type: "select",
-            options: getColorOptions(),
-            default: "var(--colors-palette-text)",
-          },
-        },
+        type: "select",
+        options: getColorOptions(),
+        default: "var(--colors-palette-text)",
       },
     },
   },
@@ -300,8 +259,8 @@ export const themeConfig: ThemeConfig = {
         label: "Background Color",
         type: "select",
         plugin: "backgroundColor",
-        options: getBackgroundColorOptions(),
-        default: "var(--colors-palette-background-default)",
+        options: getColorOptions(),
+        default: "var(--colors-palette-background)",
       },
     },
   },
@@ -313,20 +272,6 @@ export const themeConfig: ThemeConfig = {
         type: "number",
         plugin: "borderRadius",
         default: 20,
-      },
-      primary: {
-        label: "Primary Color",
-        type: "select",
-        plugin: "colors",
-        options: getColorOptions(),
-        default: "var(--colors-palette-primary)",
-      },
-      primaryForeground: {
-        label: "Primary Foreground Color",
-        type: "select",
-        plugin: "colors",
-        options: getColorOptions(),
-        default: "var(--colors-palette-foreground)",
       },
       fontWeight: {
         label: "Font Weight",
@@ -348,9 +293,10 @@ export const themeConfig: ThemeConfig = {
     styles: {
       footer: {
         label: "Footer Background Color",
-        type: "color",
-        plugin: "backgroundColor",
-        default: "#000000",
+        type: "select",
+        plugin: "colors",
+        options: getColorOptions(),
+        default: "var(--colors-palette-primary)",
       },
     },
   },

@@ -23,8 +23,7 @@ const bodyVariants = cva("components text-body-fontSize", {
       secondary: "text-palette-secondary",
       accent: "text-palette-accent",
       text: "text-palette-text",
-      background: "text-primary-palette-background",
-      foreground: "text-palette-foreground",
+      background: "text-palette-background",
     },
     textTransform: {
       none: "",
