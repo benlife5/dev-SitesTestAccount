@@ -6,8 +6,16 @@ const getColorOptions = () => {
     { label: "Secondary", value: "var(--colors-palette-secondary)" },
     { label: "Accent", value: "var(--colors-palette-accent)" },
     { label: "Text", value: "var(--colors-palette-text)" },
-    { label: "Background", value: "var(--colors-palette-background)" },
+    { label: "Background", value: "var(--colors-palette-background-default)" },
     { label: "Foreground", value: "var(--colors-palette-foreground)" },
+  ];
+};
+
+const getBackgroundColorOptions = () => {
+  return [
+    { label: "Light", value: "var(--colors-palette-background-light)" },
+    { label: "Default", value: "var(--colors-palette-background-default)" },
+    { label: "Dark", value: "var(--colors-palette-background-dark)" },
   ];
 };
 
@@ -292,8 +300,8 @@ export const themeConfig: ThemeConfig = {
         label: "Background Color",
         type: "select",
         plugin: "backgroundColor",
-        options: getColorOptions(),
-        default: "var(--colors-palette-background)",
+        options: getBackgroundColorOptions(),
+        default: "var(--colors-palette-background-default)",
       },
     },
   },
@@ -338,13 +346,6 @@ export const themeConfig: ThemeConfig = {
   page: {
     label: "Page",
     styles: {
-      backgroundColor: {
-        label: "Background Color",
-        type: "select",
-        plugin: "backgroundColor",
-        options: getColorOptions(),
-        default: "var(--colors-palette-background)",
-      },
       footer: {
         label: "Footer Background Color",
         type: "color",

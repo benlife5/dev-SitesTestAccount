@@ -26,12 +26,12 @@ const textListVariants = cva("list-inside text-font-fontSize p-8", {
     },
     color: {
       default: "text-body-color",
-      primary: "text-primary",
-      secondary: "text-secondary",
-      accent: "text-accent",
-      text: "text-text",
-      background: "text-background",
-      foreground: "text-foreground",
+      primary: "text-palette-primary",
+      secondary: "text-palette-secondary",
+      accent: "text-palette-accent",
+      text: "text-palette-text",
+      background: "text-palette-background",
+      foreground: "text-palette-foreground",
     },
     textTransform: {
       none: "",

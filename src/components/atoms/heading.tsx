@@ -26,12 +26,12 @@ const headingVariants = cva("components", {
     },
     color: {
       default: "",
-      primary: "text-primary",
-      secondary: "text-secondary",
-      accent: "text-accent",
-      text: "text-text",
-      foreground: "text-foreground",
-      background: "text-background",
+      primary: "text-palette-primary",
+      secondary: "text-palette-secondary",
+      accent: "text-palette-accent",
+      text: "text-palette-text",
+      foreground: "text-palette-foreground",
+      background: "text-palette-background",
     },
     transform: {
       none: "",
