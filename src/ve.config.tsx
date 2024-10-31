@@ -1,83 +1,47 @@
 import type { Config } from "@measured/puck";
 
 import {
-  HeadingTextComponent as HeadingText,
-  HeadingTextProps,
-  ImageWrapperComponent as ImageWrapper,
-  ImageWrapperProps,
+  AddressComponent as Address,
+  AddressProps,
   BodyTextComponent as BodyText,
   BodyTextProps,
-} from "@yext/visual-editor";
-
-// import { HeroComponent as Hero, HeroProps } from "./components/Hero";
-import {
-  GridSectionComponent as GridSection,
-  GridSectionProps,
-} from "./components/GridSection";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-// import { CardComponent as Card, CardProps } from "./components/Card";
-// import {
-//   StoreInfoCardComponent as StoreInfoCard,
-//   StoreInfoCardProps,
-// } from "./components/StoreInfoCard";
-// import { FAQComponent as FAQ, FAQProps } from "./components/FAQ";
-// import {
-//   DeliveryPromoComponent as DeliveryPromo,
-//   DeliveryPromoProps,
-// } from "./components/DeliveryPromo";
-// import { BannerComponent as Banner, BannerProps } from "./components/Banner";
-import {
-  HoursCardComponent as HoursCard,
-  HoursCardProps,
-} from "./components/HoursCard";
-// import { PromoComponent as Promo, PromoProps } from "./components/Promo";
-// import {
-//   FeaturedItemsComponent as FeaturedItems,
-//   FeaturedItemsProps,
-// } from "./components/FeaturedItems";
-import {
-  CTAWrapperComponent as CTAWrapper,
+  CTAWrapperComponent as CTA,
   CTAWrapperProps,
-} from "./components/CtaWrapper";
-import {
-  HoursStatusWrapperComponent as HoursStatusWrapper,
-  HoursStatusWrapperProps,
-} from "./components/HoursStatus";
-
-import "@yext/visual-editor/style.css";
-import {
+  EmailsComponent as Emails,
+  EmailsProps,
   FlexContainerComponent as FlexContainer,
   FlexContainerProps,
-} from "./components/FlexContainer";
-import {
-  AddressProps,
-  AddressComponent as Address,
-} from "./components/Address.js";
-import {
+  GridSectionComponent as GridSection,
+  GridSectionProps,
+  HeadingTextComponent as HeadingText,
+  HeadingTextProps,
+  HoursCardComponent as HoursCard,
+  HoursCardProps,
+  HoursStatusComponent as HoursStatus,
+  HoursStatusProps,
+  ImageWrapperComponent as ImageWrapper,
+  ImageWrapperProps,
+  PhoneComponent as Phone,
+  PhoneProps,
   TextListComponent as TextList,
   TextListProps,
-} from "./components/TextList.js";
+} from "@yext/visual-editor";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 type LocationProps = {
-  // Hero: HeroProps;
   GridSection: GridSectionProps;
-  // Card: CardProps;
-  // FAQ: FAQProps;
-  // DeliveryPromo: DeliveryPromoProps;
-  // Banner: BannerProps;
   HoursCard: HoursCardProps;
-  // StoreInfoCard: StoreInfoCardProps;
-  // Promo: PromoProps;
-  // FeaturedItems: FeaturedItemsProps;
   BodyText: BodyTextProps;
   HeadingText: HeadingTextProps;
   ImageWrapper: ImageWrapperProps;
-  CTAWrapper: CTAWrapperProps;
-  HoursStatusWrapper: HoursStatusWrapperProps;
+  CTA: CTAWrapperProps;
+  HoursStatus: HoursStatusProps;
   FlexContainer: FlexContainerProps;
   Address: AddressProps;
   TextList: TextListProps;
+  Emails: EmailsProps;
+  Phone: PhoneProps;
 };
 
 // All the available components for locations
@@ -85,22 +49,16 @@ export const locationConfig: Config<LocationProps> = {
   components: {
     Address,
     BodyText,
-    CTAWrapper,
+    CTA,
     FlexContainer,
     GridSection,
     HeadingText,
     HoursCard,
-    HoursStatusWrapper,
+    HoursStatus,
     ImageWrapper,
     TextList,
-    // Hero,
-    // Card,
-    // FAQ,
-    // DeliveryPromo,
-    // Banner,
-    // StoreInfoCard,
-    // Promo,
-    // FeaturedItems,
+    Emails,
+    Phone,
   },
   root: {
     render: ({ children, puck: { isEditing } }) => {
