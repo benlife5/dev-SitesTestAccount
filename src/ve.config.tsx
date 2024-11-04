@@ -18,8 +18,8 @@ import {
   HeadingTextProps,
   HoursCardComponent as HoursCard,
   HoursCardProps,
-  // HoursStatusComponent as HoursStatus,
-  // HoursStatusProps,
+  HoursStatusComponent as HoursStatus,
+  HoursStatusProps,
   ImageWrapperComponent as ImageWrapper,
   ImageWrapperProps,
   PhoneComponent as Phone,
@@ -29,11 +29,6 @@ import {
 } from "@yext/visual-editor";
 import { Header } from "./components/Header.js";
 import { Footer } from "./components/Footer.js";
-
-import {
-  HoursStatusComponent as HoursStatus,
-  HoursStatusProps,
-} from "./components/HoursStatus.js";
 
 type LocationProps = {
   GridSection: GridSectionProps;
