@@ -24,6 +24,14 @@ const getWeightOptions = () => {
   ];
 };
 
+const getFontOptions = () => {
+  return [
+    { label: "Sans Serif", value: "sans-serif" },
+    { label: "Serif", value: "serif" },
+    { label: "Monospaced", value: "monospaced" },
+  ];
+};
+
 export const themeConfig: ThemeConfig = {
   palette: {
     label: "Color Palette",
@@ -37,7 +45,7 @@ export const themeConfig: ThemeConfig = {
       secondary: {
         label: "Secondary",
         type: "color",
-        default: "#871900",
+        default: "#FFFFFF",
         plugin: "colors",
       },
       accent: {
@@ -56,7 +64,7 @@ export const themeConfig: ThemeConfig = {
         label: "Background",
         type: "color",
         plugin: "colors",
-        default: "#000000",
+        default: "#FFFFFF",
       },
     },
   },
@@ -67,7 +75,7 @@ export const themeConfig: ThemeConfig = {
         label: "Font Size",
         type: "number",
         plugin: "fontSize",
-        default: 24,
+        default: 48,
       },
       fontWeight: {
         label: "Font Weight",
@@ -81,7 +89,14 @@ export const themeConfig: ThemeConfig = {
         type: "select",
         plugin: "colors",
         options: getColorOptions(),
-        default: "var(--colors-palette-primary)",
+        default: "var(--colors-palette-text)",
+      },
+      fontFamily: {
+        label: "Font",
+        type: "select",
+        plugin: "fontFamily",
+        options: getFontOptions(),
+        default: "sans-serif",
       },
     },
   },
@@ -106,7 +121,14 @@ export const themeConfig: ThemeConfig = {
         type: "select",
         plugin: "colors",
         options: getColorOptions(),
-        default: "var(--colors-palette-primary)",
+        default: "var(--colors-palette-text)",
+      },
+      fontFamily: {
+        label: "Font",
+        type: "select",
+        plugin: "fontFamily",
+        options: getFontOptions(),
+        default: "serif",
       },
     },
   },
@@ -131,7 +153,7 @@ export const themeConfig: ThemeConfig = {
         type: "select",
         plugin: "colors",
         options: getColorOptions(),
-        default: "var(--colors-palette-primary)",
+        default: "var(--colors-palette-text)",
       },
     },
   },
@@ -156,7 +178,7 @@ export const themeConfig: ThemeConfig = {
         type: "select",
         plugin: "colors",
         options: getColorOptions(),
-        default: "var(--colors-palette-secondary)",
+        default: "var(--colors-palette-text)",
       },
     },
   },
@@ -181,7 +203,7 @@ export const themeConfig: ThemeConfig = {
         type: "select",
         plugin: "colors",
         options: getColorOptions(),
-        default: "var(--colors-palette-secondary)",
+        default: "var(--colors-palette-text)",
       },
     },
   },
@@ -206,7 +228,7 @@ export const themeConfig: ThemeConfig = {
         type: "select",
         plugin: "colors",
         options: getColorOptions(),
-        default: "var(--colors-palette-secondary)",
+        default: "var(--colors-palette-text)",
       },
     },
   },
@@ -217,7 +239,7 @@ export const themeConfig: ThemeConfig = {
         label: "Font Size",
         type: "number",
         plugin: "fontSize",
-        default: 12,
+        default: 16,
       },
       fontWeight: {
         label: "Font Weight",
@@ -285,6 +307,20 @@ export const themeConfig: ThemeConfig = {
         type: "number",
         plugin: "fontSize",
         default: 12,
+      },
+      backgroundColor: {
+        label: "Background Color",
+        type: "select",
+        plugin: "backgroundColor",
+        options: getColorOptions(),
+        default: "var(--colors-palette-background)",
+      },
+      textColor: {
+        label: "Text Color",
+        plugin: "colors",
+        type: "select",
+        options: getColorOptions(),
+        default: "var(--colors-palette-text)",
       },
     },
   },
