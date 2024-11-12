@@ -24,8 +24,14 @@ const getWeightOptions = () => {
   ];
 };
 
+const visualEditorFonts = [
+  { label: "Roboto", value: `"Roboto", sans-serif` },
+  { label: "Sour Gummy", value: `"Sour Gummy", sans-serif` },
+];
+
 const getFontOptions = () => {
   return [
+    ...visualEditorFonts,
     { label: "Sans Serif", value: "sans-serif" },
     { label: "Serif", value: "serif" },
     { label: "Monospaced", value: "monospaced" },
