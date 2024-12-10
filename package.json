@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "pages dev",
     "prod": "pages prod",
-    "build": "pages build"
+    "build": "pages build",
+    "components": "REGISTRY_URL=https://reliably-numerous-kit.pgsdemo.com/components npx shadcn add"
   },
   "engines": {
     "node": "^18.4.0 || >=20.2.0"
@@ -45,9 +46,9 @@
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "@yext/pages": "^1.2.0-beta.3",
+    "@yext/pages": "https://github.com/mkilpatrick/pagesjs-sumo-demo/raw/refs/heads/master/yext-pages-1.1.5.tgz",
+    "@yext/visual-editor": "^0.0.18",
     "@yext/pages-components": "^1.0.2",
-    "@yext/visual-editor": "https://github.com/benlife5/prod-expiremental-ve/raw/refs/heads/main/yext-visual-editor-0.0.16.tgz",
     "autoprefixer": "^10.4.8",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.7",

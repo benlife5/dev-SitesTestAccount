@@ -97,7 +97,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 
 const Location: Template<TemplateRenderProps> = ({ document }) => {
   const { visualTemplate } = document;
-  console.log(document);
+  console.log("document in template:", document);
   return (
     <DocumentProvider value={document}>
       <Render config={locationConfig as Config} data={visualTemplate} />
