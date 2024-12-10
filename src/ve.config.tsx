@@ -1,29 +1,27 @@
 import type { Config } from "@measured/puck";
 import "@yext/visual-editor/style.css";
 import {
-  AddressComponent as Address,
+  Address,
   AddressProps,
-  BodyTextComponent as BodyText,
+  BodyText,
   BodyTextProps,
-  CTAWrapperComponent as CTA,
-  CTAWrapperProps,
-  EmailsComponent as Emails,
+  Emails,
   EmailsProps,
-  FlexContainerComponent as FlexContainer,
+  FlexContainer,
   FlexContainerProps,
-  GetDirectionsComponent as GetDirections,
+  GetDirections,
   GetDirectionsProps,
-  GridSectionComponent as GridSection,
+  GridSection,
   GridSectionProps,
-  HoursCardComponent as HoursCard,
-  HoursCardProps,
-  HoursStatusComponent as HoursStatus,
+  HoursTable,
+  HoursTableProps,
+  HoursStatus,
   HoursStatusProps,
-  ImageWrapperComponent as ImageWrapper,
+  ImageWrapper,
   ImageWrapperProps,
-  PhoneComponent as Phone,
+  Phone,
   PhoneProps,
-  TextListComponent as TextList,
+  TextList,
   TextListProps,
 } from "@yext/visual-editor";
 import { BannerComponent as Banner, BannerProps } from "./components/Banner";
@@ -43,11 +41,10 @@ import {
 
 type LocationProps = {
   GridSection: GridSectionProps;
-  HoursCard: HoursCardProps;
+  HoursTable: HoursTableProps;
   BodyText: BodyTextProps;
   HeadingText: HeadingTextProps;
   ImageWrapper: ImageWrapperProps;
-  CTA: CTAWrapperProps;
   HoursStatus: HoursStatusProps;
   FlexContainer: FlexContainerProps;
   Address: AddressProps;
@@ -66,12 +63,11 @@ export const locationConfig: Config<LocationProps> = {
   components: {
     Address,
     BodyText,
-    CTA,
     FlexContainer,
     GetDirections,
     GridSection,
     HeadingText,
-    HoursCard,
+    HoursTable,
     HoursStatus,
     ImageWrapper,
     TextList,
