@@ -17,9 +17,6 @@ export const config = {
   name: "location",
   stream: {
     $id: "location-stream",
-    filter: {
-      entityTypes: ["location"],
-    },
     fields: [
       "id",
       "uid",
@@ -29,20 +26,10 @@ export const config = {
       "hours",
       "address",
       "yextDisplayCoordinate",
-      "c_productSection.sectionTitle",
-      "c_productSection.linkedProducts.name",
-      "c_productSection.linkedProducts.c_productPromo",
-      "c_productSection.linkedProducts.c_description",
-      "c_productSection.linkedProducts.c_coverPhoto",
-      "c_productSection.linkedProducts.c_productCTA",
-      "c_hero",
-      "c_faqSection.linkedFAQs.question",
-      "c_faqSection.linkedFAQs.answerV2",
       "additionalHoursText",
       "mainPhone",
       "emails",
       "services",
-      "c_deliveryPromo",
     ],
     localization: {
       locales: ["en"],
@@ -78,19 +65,15 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug
-    ? document.slug
-    : `${document.locale}/${document.address.region}/${document.address.city}/${
-        document.address.line1
-      }-${document.id.toString()}`;
+  return document.slug ? document.slug : `path-${document.id.toString()}`;
 };
 
 const Location: Template<TemplateRenderProps> = ({ document }) => {
-  const { visualTemplate } = document;
+  // const { visualTemplate } = document;
   console.log("document in location template:", document);
   return (
     <VisualEditorProvider document={document}>
-      <Render config={locationConfig as Config} data={visualTemplate} />
+      <Render config={locationConfig as Config} data={document.__.layout} />
     </VisualEditorProvider>
   );
 };
