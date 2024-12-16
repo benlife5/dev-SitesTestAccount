@@ -2,7 +2,7 @@ import "@yext/visual-editor/style.css";
 import {
   Template,
   GetPath,
-  TemplateConfig,
+  // TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
   GetHeadConfig,
@@ -13,36 +13,32 @@ import { locationConfig } from "../ve.config";
 import { applyTheme, VisualEditorProvider } from "@yext/visual-editor";
 import { themeConfig } from "../../theme.config";
 
-export const config = {
-  name: "location",
-  stream: {
-    $id: "location-stream",
-    fields: [
-      "id",
-      "uid",
-      "meta",
-      "slug",
-      "name",
-      "hours",
-      "address",
-      "yextDisplayCoordinate",
-      "additionalHoursText",
-      "mainPhone",
-      "emails",
-      "services",
-    ],
-    localization: {
-      locales: ["en"],
-    },
-  },
-  additionalProperties: {
-    isVETemplate: true,
-  },
-} as const satisfies TemplateConfig;
-
-const h = `<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">`;
+// export const config = {
+//   name: "location",
+//   stream: {
+//     $id: "location-stream",
+//     fields: [
+//       "id",
+//       "uid",
+//       "meta",
+//       "slug",
+//       "name",
+//       "hours",
+//       "address",
+//       "yextDisplayCoordinate",
+//       "additionalHoursText",
+//       "mainPhone",
+//       "emails",
+//       "services",
+//     ],
+//     localization: {
+//       locales: ["en"],
+//     },
+//   },
+//   additionalProperties: {
+//     isVETemplate: true,
+//   },
+// } as const satisfies TemplateConfig;
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   document,
@@ -60,7 +56,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         },
       },
     ],
-    other: applyTheme(document, themeConfig, h),
+    other: applyTheme(document, themeConfig),
   };
 };
 
