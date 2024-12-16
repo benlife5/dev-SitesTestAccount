@@ -61,7 +61,9 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug ? document.slug : `path-${document.id.toString()}`;
+  return document.slug
+    ? document.slug
+    : `path-${Math.floor(Math.random() * (1000000 - 0) + 0)}`;
 };
 
 const Location: Template<TemplateRenderProps> = ({ document }) => {
